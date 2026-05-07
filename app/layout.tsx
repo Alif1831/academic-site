@@ -18,8 +18,15 @@ export default function RootLayout({
       <body>
         <header className="sticky top-0 z-50 border-b border-stone-200/70 bg-[#f7f3ea]/90 backdrop-blur">
           <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 md:flex-row md:items-center md:justify-between">
-            <a href="/" className="text-lg font-semibold tracking-tight">
-              Alif Jawad
+            <a href="/" className="flex items-center gap-3">
+              <img
+                src="/images/profile.jpg"
+                alt="Alif Jawad"
+                className="h-9 w-9 rounded-full border border-stone-300 object-cover"
+              />
+              <span className="text-lg font-semibold tracking-tight">
+                Alif Jawad
+              </span>
             </a>
 
             <nav className="flex flex-wrap gap-x-5 gap-y-3 text-sm text-stone-600">
