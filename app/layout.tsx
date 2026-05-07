@@ -8,51 +8,60 @@ export const metadata: Metadata = {
     "PhD student at the University of Arizona researching MXenes, MAX phases, Flash Joule Heating, molecular dynamics, and materials informatics.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <header className="sticky top-0 z-50 border-b border-stone-200/70 bg-[#f7f3ea]/90 backdrop-blur">
-          <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 md:flex-row md:items-center md:justify-between">
-            <a href="/" className="flex items-center gap-3">
+        <header className="site-header">
+          <div className="site-header-inner">
+            <a href="/" className="nav-brand">
               <img
                 src="/images/profile.jpg"
                 alt="Alif Jawad"
-                className="h-9 w-9 rounded-full border border-stone-300 object-cover"
+                className="nav-avatar"
               />
-              <span className="text-lg font-semibold tracking-tight">
-                Alif Jawad
-              </span>
+              <span className="nav-name">Alif Jawad</span>
             </a>
 
-            <nav className="flex flex-wrap gap-x-5 gap-y-3 text-sm text-stone-600">
-              <a href="/research" className="hover:text-stone-950">
-                Research
-              </a>
-              <a href="/publications" className="hover:text-stone-950">
-                Publications
-              </a>
-              <a href="/workshops" className="hover:text-stone-950">
-                Workshops
-              </a>
-              <a href="/cv" className="hover:text-stone-950">
-                CV
-              </a>
-              <a href="/contact" className="hover:text-stone-950">
-                Contact
-              </a>
+            <nav className="nav-links">
+              {[
+                ["Research", "/research"],
+                ["Publications", "/publications"],
+                ["Workshops", "/workshops"],
+                ["CV", "/cv"],
+                ["Contact", "/contact"],
+              ].map(([label, href]) => (
+                <a key={label} href={href} className="nav-link">
+                  {label}
+                </a>
+              ))}
             </nav>
           </div>
         </header>
 
         {children}
 
-        <footer className="mx-auto max-w-6xl px-6 py-10 text-sm text-stone-500">
-          © {new Date().getFullYear()} Alif Jawad · University of Arizona
+        <footer className="site-footer">
+          <div className="site-footer-inner">
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+              <span className="footer-brand">Alif Jawad</span>
+              <span className="footer-sep">·</span>
+              <span className="footer-muted">University of Arizona</span>
+            </div>
+            <div className="footer-links">
+              {[
+                ["Scholar", "https://scholar.google.com/citations?hl=en&pli=1&user=pJ50c_QAAAAJ"],
+                ["GitHub", "https://github.com/Alif1831"],
+                ["LinkedIn", "https://www.linkedin.com/in/alif-jawad/"],
+                ["Email", "mailto:alifjawad@arizona.edu"],
+              ].map(([label, href]) => (
+                <a key={label} href={href} target="_blank" className="footer-link">
+                  {label}
+                </a>
+              ))}
+            </div>
+            <span className="footer-muted">© {new Date().getFullYear()}</span>
+          </div>
         </footer>
 
         <Analytics />

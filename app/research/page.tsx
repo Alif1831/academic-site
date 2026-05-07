@@ -1,142 +1,144 @@
 export default function ResearchPage() {
+  const tags = [
+    "MXenes","MAX Phases","Flash Joule Heating","2D Materials",
+    "Material Characterization","Molecular Dynamics",
+    "Applied Machine Learning","Material Informatics","Electrochemical Materials",
+  ];
+
   return (
-    <main className="mx-auto max-w-6xl px-6 py-16">
-      <section className="overflow-hidden rounded-[2rem] border border-stone-200 bg-white/80 shadow-sm">
-        <div className="bg-stone-950 px-8 py-12 text-white md:px-12">
-          <p className="text-sm font-medium uppercase tracking-[0.25em] text-amber-300">
-            Research
-          </p>
-
-          <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight">
-            Advanced materials, MXenes, MAX phases, and data-driven materials discovery.
-          </h1>
-
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-stone-300">
-            My research focuses on materials synthesis, 2D materials,
-            electrochemical materials, molecular dynamics simulations, applied
-            machine learning, and materials characterization.
-          </p>
-
-          <div className="mt-8">
-            <a
-              href="https://scholar.google.com/citations?hl=en&pli=1&user=pJ50c_QAAAAJ"
-              target="_blank"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-stone-950 hover:bg-stone-100"
-            >
-              <span>🎓</span>
-              Google Scholar
-            </a>
+    <main className="page-main">
+      {/* Header */}
+      <section className="hero-dark" style={{ borderRadius: "2rem", padding: "3rem 2.5rem 2.5rem", marginBottom: "1.5rem" }}>
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <div className="section-label">
+            <span className="label-gold-light">Research</span>
           </div>
+          <h1 style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(2rem, 5vw, 3.25rem)",
+            fontWeight: 500, lineHeight: 1.15,
+            color: "white", margin: "0 0 1rem", maxWidth: "40rem",
+          }}>
+            Advanced materials, MXenes,{" "}
+            <em style={{ fontStyle: "italic", color: "rgba(255,255,255,0.75)" }}>
+              MAX phases, and data-driven discovery.
+            </em>
+          </h1>
+          <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "1rem", lineHeight: 1.7, maxWidth: "36rem", margin: "0 0 2rem" }}>
+            My research focuses on materials synthesis, 2D materials, electrochemical materials,
+            molecular dynamics simulations, applied machine learning, and materials characterization.
+          </p>
+          <a
+            href="https://scholar.google.com/citations?hl=en&pli=1&user=pJ50c_QAAAAJ"
+            target="_blank"
+            style={{
+              display: "inline-flex", alignItems: "center", gap: "0.5rem",
+              background: "white", color: "var(--navy)",
+              borderRadius: "999px", padding: "0.65rem 1.4rem",
+              fontSize: "0.875rem", fontWeight: 500, textDecoration: "none",
+              transition: "opacity .2s",
+            }}
+          >
+            <span>🎓</span> Google Scholar
+          </a>
         </div>
+      </section>
 
-        <div className="grid gap-6 p-8 md:p-12">
-          <section className="rounded-3xl border border-stone-200 bg-stone-50 p-6">
-            <h2 className="text-2xl font-semibold text-stone-950">
-              Current PhD Research
-            </h2>
+      {/* Current PhD Research */}
+      <section className="card" style={{ padding: "2rem 2.25rem", marginBottom: "1.5rem" }}>
+        <div className="section-label">
+          <span className="label-gold">Current PhD Research</span>
+        </div>
+        <div style={{
+          background: "var(--surface-tinted)",
+          border: "1px solid rgba(15,28,46,0.07)",
+          borderRadius: "1.25rem",
+          padding: "1.75rem",
+        }}>
+          <p className="label-gold" style={{ marginBottom: "0.75rem" }}>
+            Beidaghi Electrochemistry Research Group
+          </p>
+          <h2 style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "1.6rem", fontWeight: 500,
+            color: "var(--navy)", margin: "0 0 1rem", lineHeight: 1.25,
+          }}>
+            MAX Phase Synthesis using Flash Joule Heating
+          </h2>
+          <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "var(--slate)", maxWidth: "44rem", margin: 0 }}>
+            I work on optimizing synthesis conditions for Ti, Nb, and V MAX phases using Flash Joule Heating.
+            I am also interested in exploring synthesis pathways from low-entropy to high-entropy MAX phases.
+          </p>
+        </div>
+      </section>
 
-            <div className="mt-6 rounded-2xl bg-white p-6">
-              <p className="text-sm font-medium uppercase tracking-widest text-amber-700">
-                Beidaghi Electrochemistry Research Group
-              </p>
+      {/* Two-col cards */}
+      <section style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))", gap: "1rem", marginBottom: "1.5rem" }}>
+        <div className="card" style={{ padding: "2rem" }}>
+          <div className="section-label">
+            <span className="label-gold">MXenes & Electrochemical Materials</span>
+          </div>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.35rem", fontWeight: 500, color: "var(--navy)", margin: "0 0 0.875rem" }}>
+            2D Materials for Energy & Filtration
+          </h2>
+          <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "var(--slate)", margin: 0 }}>
+            I am interested in MXene-based materials for electrochemical and filtration applications,
+            including MXene inks, delaminated MXene films, and electrode materials.
+          </p>
+        </div>
+        <div className="card" style={{ padding: "2rem" }}>
+          <div className="section-label">
+            <span className="label-gold">Materials Informatics</span>
+          </div>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.35rem", fontWeight: 500, color: "var(--navy)", margin: "0 0 0.875rem" }}>
+            Data-Driven Discovery
+          </h2>
+          <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "var(--slate)", margin: 0 }}>
+            I am interested in combining materials science with applied machine learning to understand
+            structure-property relationships and support data-driven materials discovery.
+          </p>
+        </div>
+      </section>
 
-              <h3 className="mt-3 text-2xl font-semibold text-stone-950">
-                MAX Phase Synthesis using Flash Joule Heating
-              </h3>
+      {/* Previous Research */}
+      <section className="card" style={{ padding: "2rem 2.25rem", marginBottom: "1.5rem" }}>
+        <div className="section-label">
+          <span className="label-gold">Previous Research</span>
+        </div>
+        <div style={{
+          background: "var(--surface-tinted)",
+          border: "1px solid rgba(15,28,46,0.07)",
+          borderRadius: "1.25rem",
+          padding: "1.75rem",
+        }}>
+          <p className="label-gold" style={{ marginBottom: "0.75rem" }}>Undergraduate Thesis · BUET</p>
+          <h2 style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "1.5rem", fontWeight: 500,
+            color: "var(--navy)", margin: "0 0 1rem", lineHeight: 1.3,
+          }}>
+            Molecular Dynamics and Machine Learning for High-Entropy Alloys
+          </h2>
+          <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "var(--slate)", maxWidth: "44rem", margin: "0 0 1.5rem" }}>
+            My undergraduate thesis studied tensile strength prediction of high-entropy alloy FeCrCuCoNi
+            using molecular dynamics simulations and machine learning. The work used low-fidelity
+            single-crystal data and high-fidelity polycrystal data with a multi-fidelity neural network approach.
+          </p>
+          <a href="https://doi.org/10.1007/s00894-025-06439-z" target="_blank" className="btn-primary">
+            View Related Publication
+          </a>
+        </div>
+      </section>
 
-              <p className="mt-4 max-w-4xl leading-7 text-stone-600">
-                I work on optimizing synthesis conditions for Ti, Nb, and V MAX
-                phases using Flash Joule Heating. I am also interested in
-                exploring synthesis pathways from low-entropy to high-entropy
-                MAX phases.
-              </p>
-            </div>
-          </section>
-
-          <section className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-3xl border border-stone-200 bg-stone-50 p-6">
-              <h2 className="text-2xl font-semibold text-stone-950">
-                MXenes & Electrochemical Materials
-              </h2>
-
-              <p className="mt-5 leading-7 text-stone-600">
-                I am interested in MXene-based materials for electrochemical and
-                filtration applications, including MXene inks, delaminated MXene
-                films, and electrode materials.
-              </p>
-            </div>
-
-            <div className="rounded-3xl border border-stone-200 bg-stone-50 p-6">
-              <h2 className="text-2xl font-semibold text-stone-950">
-                Materials Informatics
-              </h2>
-
-              <p className="mt-5 leading-7 text-stone-600">
-                I am interested in combining materials science with applied
-                machine learning to understand structure-property relationships
-                and support data-driven materials discovery.
-              </p>
-            </div>
-          </section>
-
-          <section className="rounded-3xl border border-stone-200 bg-stone-50 p-6">
-            <h2 className="text-2xl font-semibold text-stone-950">
-              Previous Research
-            </h2>
-
-            <div className="mt-6 rounded-2xl bg-white p-6">
-              <p className="text-sm font-medium uppercase tracking-widest text-amber-700">
-                Undergraduate Thesis · BUET
-              </p>
-
-              <h3 className="mt-3 text-2xl font-semibold text-stone-950">
-                Molecular Dynamics and Machine Learning for High-Entropy Alloys
-              </h3>
-
-              <p className="mt-4 max-w-4xl leading-7 text-stone-600">
-                My undergraduate thesis studied tensile strength prediction of
-                high-entropy alloy FeCrCuCoNi using molecular dynamics
-                simulations and machine learning. The work used low-fidelity
-                single-crystal data and high-fidelity polycrystal data with a
-                multi-fidelity neural network approach.
-              </p>
-
-              <a
-                href="https://doi.org/10.1007/s00894-025-06439-z"
-                target="_blank"
-                className="mt-6 inline-block rounded-full bg-stone-950 px-5 py-3 text-sm font-medium text-white hover:bg-stone-800"
-              >
-                View Related Publication
-              </a>
-            </div>
-          </section>
-
-          <section className="rounded-3xl border border-stone-200 bg-stone-50 p-6">
-            <h2 className="text-2xl font-semibold text-stone-950">
-              Research Interests
-            </h2>
-
-            <div className="mt-6 flex flex-wrap gap-3">
-              {[
-                "MXenes",
-                "MAX Phases",
-                "Flash Joule Heating",
-                "2D Materials",
-                "Material Characterization",
-                "Molecular Dynamics",
-                "Applied Machine Learning",
-                "Material Informatics",
-                "Electrochemical Materials",
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-stone-200 bg-white px-4 py-2 text-sm text-stone-700"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </section>
+      {/* Research interests tags */}
+      <section className="card" style={{ padding: "2rem 2.25rem" }}>
+        <div className="section-label">
+          <span className="label-gold">Research Interests</span>
+        </div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+          {tags.map(tag => (
+            <span key={tag} className="tag">{tag}</span>
+          ))}
         </div>
       </section>
     </main>

@@ -1,218 +1,231 @@
 export default function Home() {
   return (
-    <main className="mx-auto max-w-6xl px-6 py-12">
-      <section className="grid gap-10 rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm md:grid-cols-[1.3fr_0.7fr] md:p-12">
-        <div>
-          <p className="text-sm font-medium uppercase tracking-[0.25em] text-amber-700">
-            PhD Student · Mechanical Engineering
-          </p>
+    <main className="page-main">
 
-          <h1 className="mt-5 max-w-4xl text-5xl font-semibold tracking-tight text-stone-950 md:text-6xl">
-            Alif Jawad
-          </h1>
+      {/* ── Hero ── */}
+      <section style={{
+        display: "grid",
+        gridTemplateColumns: "1fr",
+        gap: "2rem",
+        borderRadius: "2rem",
+        overflow: "hidden",
+        border: "1px solid rgba(15,28,46,0.1)",
+        marginBottom: "1.5rem",
+      }}>
+        {/* top: dark hero band */}
+        <div className="hero-dark" style={{ padding: "3rem 2.5rem 2.5rem" }}>
+          <div style={{ position: "relative", zIndex: 1 }}>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "2.5rem", flexWrap: "wrap" }}>
+              <div style={{ flex: 1, minWidth: "280px" }}>
+                <p className="label-gold-light animate-fade-up delay-1">
+                  PhD Student · Mechanical Engineering
+                </p>
+                <h1 className="animate-fade-up delay-2" style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(2.5rem, 6vw, 4rem)",
+                  fontWeight: 500,
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.01em",
+                  color: "white",
+                  margin: "0.75rem 0 1.25rem",
+                }}>
+                  Alif Jawad
+                </h1>
+                <p className="animate-fade-up delay-3" style={{
+                  fontSize: "1.0625rem",
+                  lineHeight: 1.7,
+                  color: "rgba(255,255,255,0.78)",
+                  maxWidth: "38rem",
+                  marginBottom: "0.75rem",
+                }}>
+                  PhD student at the University of Arizona working at the intersection of
+                  advanced materials synthesis, 2D materials, and data-driven discovery —
+                  with focus on MXenes, MAX phases, and Flash Joule Heating.
+                </p>
+                <p className="animate-fade-up delay-4" style={{
+                  fontSize: "0.9375rem",
+                  lineHeight: 1.7,
+                  color: "rgba(255,255,255,0.55)",
+                  maxWidth: "36rem",
+                  marginBottom: "2rem",
+                }}>
+                  My research sits at the intersection of materials synthesis,
+                  electrochemical materials, molecular dynamics, and machine learning.
+                </p>
 
-          <p className="mt-6 max-w-3xl text-xl leading-8 text-stone-700">
-            I am a PhD student at the University of Arizona working on advanced
-            materials, MXenes, MAX phases, Flash Joule Heating, molecular
-            dynamics, applied machine learning, and materials characterization.
-          </p>
+                <div className="animate-fade-up delay-4" style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", marginBottom: "1rem" }}>
+                  <a href="/research" className="btn-primary">Research</a>
+                  <a href="/publications" className="btn-ghost-white">Publications</a>
+                  <a href="/cv.pdf" target="_blank" className="btn-ghost-white">Download CV</a>
+                </div>
+                <div className="animate-fade-up delay-5" style={{ display: "flex", flexWrap: "wrap", gap: "0.625rem" }}>
+                  {[
+                    ["🎓", "Google Scholar", "https://scholar.google.com/citations?hl=en&pli=1&user=pJ50c_QAAAAJ"],
+                    ["💻", "GitHub", "https://github.com/Alif1831"],
+                    ["🔗", "LinkedIn", "https://www.linkedin.com/in/alif-jawad/"],
+                  ].map(([icon, label, href]) => (
+                    <a key={label as string} href={href as string} target="_blank" className="btn-ghost-white">
+                      <span style={{ fontSize: "0.875rem" }}>{icon}</span> {label}
+                    </a>
+                  ))}
+                </div>
+              </div>
 
-          <p className="mt-5 max-w-3xl leading-8 text-stone-600">
-            My research interests sit at the intersection of materials
-            synthesis, electrochemical materials, simulation, and data-driven
-            materials discovery.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="/research"
-              className="rounded-full bg-stone-950 px-6 py-3 text-white shadow-sm hover:bg-stone-800"
-            >
-              Research
-            </a>
-
-            <a
-              href="/publications"
-              className="rounded-full border border-stone-300 bg-white px-6 py-3 hover:bg-stone-50"
-            >
-              Publications
-            </a>
-
-            <a
-              href="/cv.pdf"
-              target="_blank"
-              className="rounded-full border border-stone-300 bg-white px-6 py-3 hover:bg-stone-50"
-            >
-              Download CV
-            </a>
-          </div>
-
-          <div className="mt-5 flex flex-wrap gap-3">
-            <a
-              href="https://scholar.google.com/citations?hl=en&pli=1&user=pJ50c_QAAAAJ"
-              target="_blank"
-              className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-medium hover:bg-stone-50"
-            >
-              <span>🎓</span>
-              Google Scholar
-            </a>
-
-            <a
-              href="https://github.com/Alif1831"
-              target="_blank"
-              className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-medium hover:bg-stone-50"
-            >
-              <span>💻</span>
-              GitHub
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/alif-jawad/"
-              target="_blank"
-              className="inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-medium hover:bg-stone-50"
-            >
-              <span>🔗</span>
-              LinkedIn
-            </a>
-          </div>
-        </div>
-
-        <div className="rounded-3xl border border-stone-200 bg-stone-50 p-5">
-          <img
-            src="/images/profile.jpg"
-            alt="Alif Jawad"
-            className="aspect-square w-full rounded-2xl object-cover shadow-sm"
-          />
-
-          <div className="mt-5 rounded-2xl bg-white p-5">
-            <p className="text-sm font-medium uppercase tracking-widest text-amber-700">
-              Affiliation
-            </p>
-            <p className="mt-3 font-semibold text-stone-950">
-              University of Arizona
-            </p>
-            <p className="mt-1 text-sm text-stone-600">
-              Beidaghi Electrochemistry Research Group
-            </p>
+              {/* profile photo */}
+              <div style={{ flexShrink: 0 }}>
+                <div style={{
+                  width: "clamp(160px, 20vw, 220px)",
+                  borderRadius: "1.5rem",
+                  overflow: "hidden",
+                  border: "2px solid rgba(201,151,58,0.4)",
+                  boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
+                }}>
+                  <img
+                    src="/images/profile.jpg"
+                    alt="Alif Jawad"
+                    style={{ width: "100%", display: "block", aspectRatio: "1", objectFit: "cover" }}
+                  />
+                </div>
+                <div style={{
+                  marginTop: "1rem",
+                  padding: "0.875rem 1rem",
+                  background: "rgba(255,255,255,0.06)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  borderRadius: "1rem",
+                  backdropFilter: "blur(8px)",
+                }}>
+                  <p className="label-gold-light" style={{ marginBottom: "0.35rem" }}>Affiliation</p>
+                  <p style={{ color: "white", fontWeight: 500, fontSize: "0.9rem", margin: 0 }}>University of Arizona</p>
+                  <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.8125rem", margin: "0.2rem 0 0" }}>
+                    Beidaghi Electrochemistry Research Group
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="mt-10 grid gap-5 md:grid-cols-4">
+      {/* ── Info cards row ── */}
+      <section style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+        gap: "1rem",
+        marginBottom: "1.5rem",
+      }}>
         {[
-          {
-            title: "Current Role",
-            text: "PhD student in Mechanical Engineering at the University of Arizona.",
-          },
-          {
-            title: "Research Focus",
-            text: "MXenes, MAX phases, Flash Joule Heating, and electrochemical materials.",
-          },
-          {
-            title: "Methods",
-            text: "Materials characterization, molecular dynamics, and applied machine learning.",
-          },
-          {
-            title: "Teaching",
-            text: "TA for Fundamentals of Materials for Engineers.",
-          },
-        ].map((item) => (
-          <div
-            key={item.title}
-            className="rounded-3xl border border-stone-200 bg-white/75 p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md"
-          >
-            <h2 className="text-lg font-semibold text-stone-950">
-              {item.title}
-            </h2>
-            <p className="mt-3 leading-7 text-stone-600">{item.text}</p>
+          { label: "Current Role", text: "PhD student in Mechanical Engineering at the University of Arizona." },
+          { label: "Research Focus", text: "MXenes, MAX phases, Flash Joule Heating, and electrochemical materials." },
+          { label: "Methods", text: "Materials characterization, molecular dynamics, and applied machine learning." },
+          { label: "Teaching", text: "TA for Fundamentals of Materials for Engineers (AME-MSE 331R)." },
+        ].map((item, i) => (
+          <div key={item.label} className="card card-hover" style={{ padding: "1.5rem" }}>
+            <div className="section-label">
+              <span className="label-gold">{item.label}</span>
+            </div>
+            <p style={{ fontSize: "0.9rem", lineHeight: 1.7, color: "var(--slate)", margin: 0 }}>{item.text}</p>
           </div>
         ))}
       </section>
 
-      <section className="mt-10 grid gap-6 md:grid-cols-[0.8fr_1.2fr]">
-        <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm">
-          <p className="text-sm font-medium uppercase tracking-[0.25em] text-amber-700">
-            Currently
-          </p>
-
-          <ul className="mt-6 space-y-4 leading-7 text-stone-700">
-            <li>• Working on MAX phase synthesis using Flash Joule Heating.</li>
-            <li>• Exploring MXene-based electrochemical materials.</li>
-            <li>• Teaching AME-MSE 331R: Fundamentals of Materials for Engineers.</li>
-            <li>• Interested in materials informatics and data-driven discovery.</li>
+      {/* ── Currently / Updates ── */}
+      <section style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+        gap: "1rem",
+        marginBottom: "1.5rem",
+      }}>
+        <div className="card" style={{ padding: "2rem" }}>
+          <div className="section-label">
+            <span className="label-gold">Currently</span>
+          </div>
+          <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "0.875rem" }}>
+            {[
+              "Working on MAX phase synthesis using Flash Joule Heating.",
+              "Exploring MXene-based electrochemical materials.",
+              "Teaching AME-MSE 331R: Fundamentals of Materials for Engineers.",
+              "Interested in materials informatics and data-driven discovery.",
+            ].map(item => (
+              <li key={item} style={{
+                display: "flex", alignItems: "flex-start", gap: "0.75rem",
+                fontSize: "0.9375rem", lineHeight: 1.65, color: "var(--slate)",
+              }}>
+                <span style={{ color: "var(--gold)", flexShrink: 0, marginTop: "0.15em" }}>◆</span>
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
 
-        <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm">
-          <p className="text-sm font-medium uppercase tracking-[0.25em] text-amber-700">
-            Recent Updates
-          </p>
-
-          <div className="mt-6 space-y-5">
-            <div>
-              <p className="font-semibold text-stone-950">
-                Publication in Journal of Molecular Modeling
-              </p>
-              <p className="mt-1 text-stone-600">
-                Multi-fidelity neural network prediction of tensile strength in
-                high-entropy alloys.
-              </p>
-            </div>
-
-            <div>
-              <p className="font-semibold text-stone-950">
-                Teaching project added
-              </p>
-              <p className="mt-1 text-stone-600">
-                Fe₃C phase diagram project for AME 331R is available on GitHub.
-              </p>
-            </div>
-
-            <div>
-              <p className="font-semibold text-stone-950">
-                Academic website launched
-              </p>
-              <p className="mt-1 text-stone-600">
-                Research, CV, publications, and contact information are now
-                organized in one place.
-              </p>
-            </div>
+        <div className="card" style={{ padding: "2rem" }}>
+          <div className="section-label">
+            <span className="label-gold">Recent Updates</span>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+            {[
+              {
+                title: "Publication in Journal of Molecular Modeling",
+                text: "Multi-fidelity neural network prediction of tensile strength in high-entropy alloys.",
+                year: "2025",
+              },
+              {
+                title: "Teaching project added",
+                text: "Fe₃C phase diagram project for AME 331R is available on GitHub.",
+                year: "2025",
+              },
+              {
+                title: "Academic website launched",
+                text: "Research, CV, publications, and contact information are now organized in one place.",
+                year: "2025",
+              },
+            ].map((item, i) => (
+              <div key={item.title} style={{
+                paddingBottom: i < 2 ? "1.25rem" : 0,
+                borderBottom: i < 2 ? "1px solid rgba(15,28,46,0.07)" : "none",
+              }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "0.5rem" }}>
+                  <p style={{ fontWeight: 500, fontSize: "0.9375rem", margin: 0, color: "var(--navy)" }}>{item.title}</p>
+                  <span style={{ fontSize: "0.75rem", color: "var(--gold)", fontWeight: 500, flexShrink: 0 }}>{item.year}</span>
+                </div>
+                <p style={{ margin: "0.35rem 0 0", fontSize: "0.875rem", lineHeight: 1.65, color: "var(--slate-light)" }}>{item.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="mt-10 rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm md:p-10">
-        <p className="text-sm font-medium uppercase tracking-[0.25em] text-amber-700">
-          Featured Work
-        </p>
-
-        <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-stone-950">
-          Multi-fidelity neural network–based prediction of tensile strength of
-          high-entropy alloy FeNiCoCrCu
-        </h2>
-
-        <p className="mt-4 max-w-3xl leading-7 text-stone-600">
-          Published in Journal of Molecular Modeling, 2025.
-        </p>
-
-        <div className="mt-6 flex flex-wrap gap-3">
-          <a
-            href="https://doi.org/10.1007/s00894-025-06439-z"
-            target="_blank"
-            className="rounded-full bg-stone-950 px-5 py-3 text-sm font-medium text-white hover:bg-stone-800"
-          >
-            View Publication
-          </a>
-
-          <a
-            href="https://github.com/Alif1831/Fe3C-Phase-diagram-for-AME-331R-Project"
-            target="_blank"
-            className="rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-medium hover:bg-stone-50"
-          >
-            Teaching GitHub Project
-          </a>
+      {/* ── Featured publication ── */}
+      <section className="hero-dark" style={{ borderRadius: "1.75rem", padding: "2.5rem" }}>
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <div className="section-label">
+            <span className="label-gold-light">Featured Work</span>
+          </div>
+          <h2 style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(1.4rem, 3vw, 2rem)",
+            fontWeight: 500,
+            color: "white",
+            lineHeight: 1.3,
+            maxWidth: "42rem",
+            margin: "0 0 0.75rem",
+          }}>
+            Multi-fidelity neural network–based prediction of tensile strength of high-entropy alloy FeNiCoCrCu
+          </h2>
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.9rem", margin: "0 0 1.75rem" }}>
+            Journal of Molecular Modeling, 2025
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
+            <a href="https://doi.org/10.1007/s00894-025-06439-z" target="_blank" className="btn-primary"
+               style={{ background: "white", color: "var(--navy)" }}>
+              View Publication
+            </a>
+            <a href="https://github.com/Alif1831/Fe3C-Phase-diagram-for-AME-331R-Project" target="_blank" className="btn-ghost-white">
+              Teaching GitHub Project
+            </a>
+          </div>
         </div>
       </section>
+
     </main>
   );
 }
