@@ -19,10 +19,7 @@ export default function ResearchPage() {
             fontWeight: 500, lineHeight: 1.15,
             color: "white", margin: "0 0 1rem", maxWidth: "40rem",
           }}>
-            Advanced materials, MXenes,{" "}
-            <em style={{ fontStyle: "italic", color: "rgba(255,255,255,0.75)" }}>
-              MAX phases, and data-driven discovery.
-            </em>
+            Advanced materials, MXenes, MAX phases, and data-driven discovery.
           </h1>
           <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "1rem", lineHeight: 1.7, maxWidth: "36rem", margin: "0 0 2rem" }}>
             My research focuses on materials synthesis, 2D materials, electrochemical materials,
