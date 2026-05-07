@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
-  title: "Alif Jawad",
+  title: "Alif Jawad | PhD Student in Mechanical Engineering",
   description:
-    "PhD student in Mechanical Engineering at the University of Arizona.",
+    "PhD student at the University of Arizona researching MXenes, MAX phases, Flash Joule Heating, molecular dynamics, and materials informatics.",
 };
 
 export default function RootLayout({
@@ -15,18 +16,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header className="sticky top-0 z-50 border-b border-stone-200/70 bg-[#f7f3ea]/80 backdrop-blur">
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <header className="sticky top-0 z-50 border-b border-stone-200/70 bg-[#f7f3ea]/90 backdrop-blur">
+          <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 md:flex-row md:items-center md:justify-between">
             <a href="/" className="text-lg font-semibold tracking-tight">
               Alif Jawad
             </a>
 
-            <nav className="flex gap-5 text-sm text-stone-600">
+            <nav className="flex flex-wrap gap-x-5 gap-y-3 text-sm text-stone-600">
               <a href="/research" className="hover:text-stone-950">
                 Research
               </a>
               <a href="/publications" className="hover:text-stone-950">
                 Publications
+              </a>
+              <a href="/workshops" className="hover:text-stone-950">
+                Workshops
               </a>
               <a href="/cv" className="hover:text-stone-950">
                 CV
@@ -43,6 +47,8 @@ export default function RootLayout({
         <footer className="mx-auto max-w-6xl px-6 py-10 text-sm text-stone-500">
           © {new Date().getFullYear()} Alif Jawad · University of Arizona
         </footer>
+
+        <Analytics />
       </body>
     </html>
   );

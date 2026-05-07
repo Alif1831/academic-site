@@ -1,32 +1,26 @@
 export default function Home() {
   return (
     <main className="mx-auto max-w-6xl px-6 py-12">
-      <section className="overflow-hidden rounded-[2rem] border border-stone-200 bg-white/80 shadow-sm">
-        <div
-          className="h-64 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/cover.jpg')" }}
-        />
-
-        <div className="px-8 pb-12 md:px-12">
-          <img
-            src="/images/profile.jpg"
-            alt="Alif Jawad"
-            className="-mt-20 h-40 w-40 rounded-full border-4 border-white object-cover shadow-lg"
-          />
-
-          <p className="mt-7 text-sm font-medium uppercase tracking-[0.25em] text-amber-700">
+      <section className="grid gap-10 rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm md:grid-cols-[1.3fr_0.7fr] md:p-12">
+        <div>
+          <p className="text-sm font-medium uppercase tracking-[0.25em] text-amber-700">
             PhD Student · Mechanical Engineering
           </p>
 
-          <h1 className="mt-4 text-5xl font-semibold tracking-tight text-stone-950 md:text-6xl">
+          <h1 className="mt-5 max-w-4xl text-5xl font-semibold tracking-tight text-stone-950 md:text-6xl">
             Alif Jawad
           </h1>
 
           <p className="mt-6 max-w-3xl text-xl leading-8 text-stone-700">
-            I am a PhD student in Mechanical Engineering at the University of
-            Arizona. My research focuses on MXenes, MAX phases, Flash Joule
-            Heating, molecular dynamics, applied machine learning, 2D materials,
-            and materials characterization.
+            I am a PhD student at the University of Arizona working on advanced
+            materials, MXenes, MAX phases, Flash Joule Heating, molecular
+            dynamics, applied machine learning, and materials characterization.
+          </p>
+
+          <p className="mt-5 max-w-3xl leading-8 text-stone-600">
+            My research interests sit at the intersection of materials
+            synthesis, electrochemical materials, simulation, and data-driven
+            materials discovery.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -45,17 +39,11 @@ export default function Home() {
             </a>
 
             <a
-              href="/cv"
+              href="/cv.pdf"
+              target="_blank"
               className="rounded-full border border-stone-300 bg-white px-6 py-3 hover:bg-stone-50"
             >
-              CV
-            </a>
-
-            <a
-              href="/contact"
-              className="rounded-full border border-stone-300 bg-white px-6 py-3 hover:bg-stone-50"
-            >
-              Contact
+              Download CV
             </a>
           </div>
 
@@ -88,30 +76,114 @@ export default function Home() {
             </a>
           </div>
         </div>
+
+        <div className="rounded-3xl border border-stone-200 bg-stone-50 p-5">
+          <img
+            src="/images/profile.jpg"
+            alt="Alif Jawad"
+            className="aspect-square w-full rounded-2xl object-cover shadow-sm"
+          />
+
+          <div className="mt-5 rounded-2xl bg-white p-5">
+            <p className="text-sm font-medium uppercase tracking-widest text-amber-700">
+              Affiliation
+            </p>
+            <p className="mt-3 font-semibold text-stone-950">
+              University of Arizona
+            </p>
+            <p className="mt-1 text-sm text-stone-600">
+              Beidaghi Electrochemistry Research Group
+            </p>
+          </div>
+        </div>
       </section>
 
-      <section className="mt-10 grid gap-5 md:grid-cols-3">
+      <section className="mt-10 grid gap-5 md:grid-cols-4">
         {[
-          "MXenes & 2D Materials",
-          "Flash Joule Heating",
-          "Materials Informatics",
+          {
+            title: "Current Role",
+            text: "PhD student in Mechanical Engineering at the University of Arizona.",
+          },
+          {
+            title: "Research Focus",
+            text: "MXenes, MAX phases, Flash Joule Heating, and electrochemical materials.",
+          },
+          {
+            title: "Methods",
+            text: "Materials characterization, molecular dynamics, and applied machine learning.",
+          },
+          {
+            title: "Teaching",
+            text: "TA for Fundamentals of Materials for Engineers.",
+          },
         ].map((item) => (
           <div
-            key={item}
-            className="rounded-3xl border border-stone-200 bg-white/75 p-6 shadow-sm"
+            key={item.title}
+            className="rounded-3xl border border-stone-200 bg-white/75 p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md"
           >
-            <h2 className="text-xl font-semibold text-stone-950">{item}</h2>
-            <p className="mt-3 leading-7 text-stone-600">
-              Research interest in advanced materials, synthesis, simulation,
-              characterization, and data-driven materials discovery.
-            </p>
+            <h2 className="text-lg font-semibold text-stone-950">
+              {item.title}
+            </h2>
+            <p className="mt-3 leading-7 text-stone-600">{item.text}</p>
           </div>
         ))}
       </section>
 
+      <section className="mt-10 grid gap-6 md:grid-cols-[0.8fr_1.2fr]">
+        <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm">
+          <p className="text-sm font-medium uppercase tracking-[0.25em] text-amber-700">
+            Currently
+          </p>
+
+          <ul className="mt-6 space-y-4 leading-7 text-stone-700">
+            <li>• Working on MAX phase synthesis using Flash Joule Heating.</li>
+            <li>• Exploring MXene-based electrochemical materials.</li>
+            <li>• Teaching AME-MSE 331R: Fundamentals of Materials for Engineers.</li>
+            <li>• Interested in materials informatics and data-driven discovery.</li>
+          </ul>
+        </div>
+
+        <div className="rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm">
+          <p className="text-sm font-medium uppercase tracking-[0.25em] text-amber-700">
+            Recent Updates
+          </p>
+
+          <div className="mt-6 space-y-5">
+            <div>
+              <p className="font-semibold text-stone-950">
+                Publication in Journal of Molecular Modeling
+              </p>
+              <p className="mt-1 text-stone-600">
+                Multi-fidelity neural network prediction of tensile strength in
+                high-entropy alloys.
+              </p>
+            </div>
+
+            <div>
+              <p className="font-semibold text-stone-950">
+                Teaching project added
+              </p>
+              <p className="mt-1 text-stone-600">
+                Fe₃C phase diagram project for AME 331R is available on GitHub.
+              </p>
+            </div>
+
+            <div>
+              <p className="font-semibold text-stone-950">
+                Academic website launched
+              </p>
+              <p className="mt-1 text-stone-600">
+                Research, CV, publications, and contact information are now
+                organized in one place.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="mt-10 rounded-[2rem] border border-stone-200 bg-white/80 p-8 shadow-sm md:p-10">
         <p className="text-sm font-medium uppercase tracking-[0.25em] text-amber-700">
-          Featured Publication
+          Featured Work
         </p>
 
         <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-stone-950">
@@ -133,10 +205,11 @@ export default function Home() {
           </a>
 
           <a
-            href="/publications"
+            href="https://github.com/Alif1831/Fe3C-Phase-diagram-for-AME-331R-Project"
+            target="_blank"
             className="rounded-full border border-stone-300 bg-white px-5 py-3 text-sm font-medium hover:bg-stone-50"
           >
-            All Publications
+            Teaching GitHub Project
           </a>
         </div>
       </section>
