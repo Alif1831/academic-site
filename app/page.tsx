@@ -178,6 +178,11 @@ export default function Home() {
                 text: "Research, CV, publications, and contact information are now organized in one place.",
                 year: "2025",
               },
+              {
+                title: "Passed PhD Qualifying Exam",
+                text: "Passed in Engineering Math and chose Thermal Sciences as my major field.",
+                year: "2025",
+              },
             ].map((item, i) => (
               <div key={item.title} style={{
                 paddingBottom: i < 2 ? "1.25rem" : 0,
