@@ -167,9 +167,18 @@ body {
 }
 .site-header-inner {
   max-width: 72rem; margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.25rem;
   display: flex; align-items: center; justify-content: space-between;
   height: 4rem;
+  gap: 1rem;
+}
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 60%;
 }
 .nav-brand {
   display: flex; align-items: center; gap: 0.75rem;
