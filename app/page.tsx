@@ -1,4 +1,29 @@
+"use client";
+
+import { useEffect } from "react";
+
+function useScrollReveal() {
+  useEffect(() => {
+    const els = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+}
+
 export default function Home() {
+  useScrollReveal();
+
   return (
     <main className="page-main">
 
@@ -12,7 +37,6 @@ export default function Home() {
         border: "1px solid rgba(15,28,46,0.1)",
         marginBottom: "1.5rem",
       }}>
-        {/* top: dark hero band */}
         <div className="hero-dark" style={{ padding: "3rem 2.5rem 2.5rem" }}>
           <div style={{ position: "relative", zIndex: 1 }}>
             <div style={{ display: "flex", alignItems: "flex-start", gap: "2.5rem", flexWrap: "wrap" }}>
@@ -24,6 +48,7 @@ export default function Home() {
                   fontFamily: "var(--font-display)",
                   fontSize: "clamp(2.5rem, 6vw, 4rem)",
                   fontWeight: 500,
+                  fontStyle: "normal",
                   lineHeight: 1.1,
                   letterSpacing: "-0.01em",
                   color: "white",
@@ -107,7 +132,7 @@ export default function Home() {
       </section>
 
       {/* ── Info cards row ── */}
-      <section style={{
+      <section className="reveal" style={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
         gap: "1rem",
@@ -118,7 +143,7 @@ export default function Home() {
           { label: "Research Focus", text: "MXenes, MAX phases, Flash Joule Heating, and electrochemical materials." },
           { label: "Methods", text: "Materials characterization, molecular dynamics, and applied machine learning." },
           { label: "Teaching", text: "TA for Fundamentals of Materials for Engineers (AME-MSE 331R)." },
-        ].map((item, i) => (
+        ].map((item) => (
           <div key={item.label} className="card card-hover" style={{ padding: "1.5rem" }}>
             <div className="section-label">
               <span className="label-gold">{item.label}</span>
@@ -129,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* ── Currently / Updates ── */}
-      <section style={{
+      <section className="reveal" style={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
         gap: "1rem",
@@ -164,6 +189,11 @@ export default function Home() {
           <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
             {[
               {
+                title: "Passed PhD Qualifying Exam",
+                text: "Passed in Engineering Math and chose Thermal Sciences as my major field.",
+                year: "2025",
+              },
+              {
                 title: "Publication in Journal of Molecular Modeling",
                 text: "Multi-fidelity neural network prediction of tensile strength in high-entropy alloys.",
                 year: "2025",
@@ -178,15 +208,10 @@ export default function Home() {
                 text: "Research, CV, publications, and contact information are now organized in one place.",
                 year: "2025",
               },
-              {
-                title: "Passed PhD Qualifying Exam",
-                text: "Passed in Engineering Math and chose Thermal Sciences as my major field.",
-                year: "2025",
-              },
             ].map((item, i) => (
               <div key={item.title} style={{
-                paddingBottom: i < 2 ? "1.25rem" : 0,
-                borderBottom: i < 2 ? "1px solid rgba(15,28,46,0.07)" : "none",
+                paddingBottom: i < 3 ? "1.25rem" : 0,
+                borderBottom: i < 3 ? "1px solid rgba(15,28,46,0.07)" : "none",
               }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "0.5rem" }}>
                   <p style={{ fontWeight: 500, fontSize: "0.9375rem", margin: 0, color: "var(--navy)" }}>{item.title}</p>
@@ -200,7 +225,7 @@ export default function Home() {
       </section>
 
       {/* ── Featured publication ── */}
-      <section className="hero-dark" style={{ borderRadius: "1.75rem", padding: "2.5rem" }}>
+      <section className="reveal hero-dark" style={{ borderRadius: "1.75rem", padding: "2.5rem" }}>
         <div style={{ position: "relative", zIndex: 1 }}>
           <div className="section-label">
             <span className="label-gold-light">Featured Work</span>
@@ -209,6 +234,7 @@ export default function Home() {
             fontFamily: "var(--font-display)",
             fontSize: "clamp(1.4rem, 3vw, 2rem)",
             fontWeight: 500,
+            fontStyle: "normal",
             color: "white",
             lineHeight: 1.3,
             maxWidth: "42rem",
