@@ -18,7 +18,10 @@
   --font-display: 'EB Garamond', Georgia, serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
 }
-
+img {
+  image-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
