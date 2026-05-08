@@ -19,22 +19,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 src="/images/profile.jpg"
                 alt="Alif Jawad"
                 className="nav-avatar"
+                width={34}
+                height={34}
               />
               <span className="nav-name">Alif Jawad</span>
             </a>
 
             <nav className="nav-links">
-              {[
-                ["Research", "/research"],
-                ["Publications", "/publications"],
-                ["Workshops", "/workshops"],
-                ["CV", "/cv"],
-                ["Contact", "/contact"],
-              ].map(([label, href]) => (
-                <a key={label} href={href} className="nav-link">
-                  {label}
-                </a>
-              ))}
+              <a href="/research" className="nav-link">Research</a>
+              <a href="/publications" className="nav-link">Publications</a>
+              <a href="/workshops" className="nav-link">Workshops</a>
+              <a href="/cv" className="nav-link">CV</a>
+              <a href="/contact" className="nav-link">Contact</a>
             </nav>
           </div>
         </header>
