@@ -14,12 +14,12 @@ export default function WorkshopsPage() {
   ];
 
   const schedule = [
-    { time: "8:00–8:50 AM", day1: "KEYNOTE: Seth Tongay", day2: "KEYNOTE: Darrell Schlom" },
-    { time: "9:00–10:00 AM", day1: "Session A: Spatial Textures of Order Parameters", day2: "Session C: Measuring Collective Excitations" },
-    { time: "10:20–11:50 AM", day1: "Session B: Electronic Excitations", day2: "Session D: Next-Gen Hardware & Software" },
-    { time: "12:10–1:30 PM", day1: "Lunch", day2: "Lunch" },
-    { time: "1:30–2:00 PM", day1: "Access & Education: David Smith", day2: "Access & Education: Aravinder Sandhu" },
-    { time: "2:00–5:00 PM", day1: "Lab Tours: Microscopy Facilities", day2: "CXFEL & FORCE Facilities Tours" },
+    { time: "8:00-8:50 AM", day1: "KEYNOTE: Seth Tongay", day2: "KEYNOTE: Darrell Schlom" },
+    { time: "9:00-10:00 AM", day1: "Session A: Spatial Textures of Order Parameters", day2: "Session C: Measuring Collective Excitations" },
+    { time: "10:20-11:50 AM", day1: "Session B: Electronic Excitations", day2: "Session D: Next-Gen Hardware and Software" },
+    { time: "12:10-1:30 PM", day1: "Lunch", day2: "Lunch" },
+    { time: "1:30-2:00 PM", day1: "Access and Education: David Smith", day2: "Access and Education: Aravinder Sandhu" },
+    { time: "2:00-5:00 PM", day1: "Lab Tours: Microscopy Facilities", day2: "CXFEL and FORCE Facilities Tours" },
   ];
 
   return (
@@ -61,7 +61,7 @@ export default function WorkshopsPage() {
       {/* Overview cards */}
       <section style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "1rem", marginBottom: "1.5rem" }}>
         {[
-          { label: "Dates", text: "May 21–22, 2026" },
+          { label: "Dates", text: "May 21-22, 2026" },
           { label: "Location", text: "Arizona State University, Tempe, AZ" },
           { label: "Funding", text: "NSF-funded workshop" },
           { label: "Focus", text: "Quantum materials, electron microscopy, ultrafast probes" },
@@ -82,10 +82,9 @@ export default function WorkshopsPage() {
         </div>
         <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "var(--slate)", maxWidth: "50rem", margin: 0 }}>
           ACoQuM brought together researchers working at the frontier of quantum materials characterization,
-          covering topics including 2D materials, moiré systems, charge density waves, cryogenic electron microscopy,
+          covering topics including 2D materials, moire systems, charge density waves, cryogenic electron microscopy,
           ultrafast X-ray and THz probes, electron ptychography, and machine learning-driven autonomous microscopy.
-          The workshop included keynote talks, technical sessions, discussion panels, and tours of ASU's
-          microscopy and CXFEL facilities.
+          The workshop included keynote talks, technical sessions, discussion panels, and tours of ASU microscopy and CXFEL facilities.
         </p>
       </section>
 
@@ -98,7 +97,7 @@ export default function WorkshopsPage() {
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.875rem" }}>
             <thead>
               <tr>
-                {["Time", "Day 1 — May 21", "Day 2 — May 22"].map(h => (
+                {["Time", "Day 1 - May 21", "Day 2 - May 22"].map(h => (
                   <th key={h} style={{
                     textAlign: "left", padding: "0.75rem 1rem",
                     borderBottom: "2px solid rgba(15,28,46,0.1)",
