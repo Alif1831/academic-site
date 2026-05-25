@@ -31,7 +31,7 @@ export default function CVPage() {
             Education, research experience, publications, teaching, technical skills, and professional activities.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
-            <a href="/cv.pdf" target="_blank" style={{
+            <a href="/cv.pdf?v=2026-05-25" target="_blank" style={{
               display: "inline-flex", alignItems: "center", gap: "0.5rem",
               background: "white", color: "var(--navy)", borderRadius: "999px",
               padding: "0.65rem 1.4rem", fontSize: "0.875rem", fontWeight: 500, textDecoration: "none",
