@@ -53,7 +53,7 @@ export default function WorkshopsPage() {
               fontSize: "0.875rem", fontWeight: 500, textDecoration: "none",
             }}
           >
-            Workshop Website &rarr;
+            Workshop Website
           </a>
         </div>
       </section>
