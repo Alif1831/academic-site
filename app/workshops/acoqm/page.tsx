@@ -91,148 +91,280 @@ export default function ACoQuMWorkshopPage() {
   ];
 
   return (
-    <main className="mx-auto max-w-6xl px-6 py-16">
-      <section className="overflow-hidden rounded-[2rem] border border-stone-200 bg-white/80 shadow-sm">
-        <div className="bg-stone-950 px-8 py-12 text-white md:px-12">
+    <main className="page-main">
+      <section
+        className="hero-dark"
+        style={{
+          borderRadius: "2rem",
+          padding: "3rem 2.5rem 2.5rem",
+          marginBottom: "1.5rem",
+        }}
+      >
+        <div style={{ position: "relative", zIndex: 1 }}>
           <a
             href="/workshops"
-            className="inline-flex rounded-full border border-white/20 px-4 py-2 text-sm text-stone-200 hover:bg-white/10"
+            className="btn-ghost-white"
+            style={{ marginBottom: "2rem", display: "inline-flex" }}
           >
             ← Back to Workshops
           </a>
 
-          <p className="mt-8 text-sm font-medium uppercase tracking-[0.25em] text-amber-300">
-            Workshop Attended
-          </p>
+          <div className="section-label">
+            <span className="label-gold-light">Workshop Attended</span>
+          </div>
 
-          <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight">
+          <h1
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(2rem, 5vw, 3.25rem)",
+              fontWeight: 500,
+              fontStyle: "normal",
+              lineHeight: 1.15,
+              color: "white",
+              margin: "0 0 1rem",
+              maxWidth: "44rem",
+            }}
+          >
             ACoQuM — Unravelling Atomistic Correlations in Quantum Materials
           </h1>
 
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-stone-300">
+          <p
+            style={{
+              color: "rgba(255,255,255,0.65)",
+              fontSize: "1rem",
+              lineHeight: 1.7,
+              maxWidth: "38rem",
+              margin: "0 0 2rem",
+            }}
+          >
             NSF-funded workshop hosted at Arizona State University, bringing
-            together researchers in quantum materials, advanced electron
+            together leading researchers in quantum materials, advanced electron
             microscopy, ultrafast spectroscopy, and materials informatics.
           </p>
 
-          <div className="mt-8">
-            <a
-              href="https://faculty.engineering.asu.edu/susarla-group/acqum-unravelling-atomistic-correlations-in-quantum-materials/"
-              target="_blank"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-stone-950 hover:bg-stone-100"
+          <a
+            href="https://faculty.engineering.asu.edu/susarla-group/acqum-unravelling-atomistic-correlations-in-quantum-materials/"
+            target="_blank"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              background: "white",
+              color: "var(--navy)",
+              borderRadius: "999px",
+              padding: "0.65rem 1.4rem",
+              fontSize: "0.875rem",
+              fontWeight: 500,
+              textDecoration: "none",
+            }}
+          >
+            Workshop Website
+          </a>
+        </div>
+      </section>
+
+      <section
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+          gap: "1rem",
+          marginBottom: "1.5rem",
+        }}
+      >
+        {[
+          { label: "Dates", text: "May 21–22, 2026" },
+          { label: "Location", text: "Arizona State University, Tempe, AZ" },
+          { label: "Funding", text: "NSF-funded workshop" },
+          {
+            label: "Focus",
+            text: "Quantum materials, electron microscopy, ultrafast probes",
+          },
+        ].map((item) => (
+          <div key={item.label} className="card" style={{ padding: "1.5rem" }}>
+            <div className="section-label">
+              <span className="label-gold">{item.label}</span>
+            </div>
+
+            <p
+              style={{
+                fontSize: "0.9rem",
+                lineHeight: 1.65,
+                color: "var(--slate)",
+                margin: 0,
+              }}
             >
-              Workshop Website
-            </a>
+              {item.text}
+            </p>
           </div>
+        ))}
+      </section>
+
+      <section
+        className="card"
+        style={{ padding: "2rem 2.25rem", marginBottom: "1.5rem" }}
+      >
+        <div className="section-label">
+          <span className="label-gold">About the Workshop</span>
         </div>
 
-        <div className="grid gap-6 p-8 md:p-12">
-          <section className="grid gap-5 md:grid-cols-4">
-            {[
-              { label: "Dates", text: "May 21–22, 2026" },
-              { label: "Location", text: "Arizona State University, Tempe, AZ" },
-              { label: "Funding", text: "NSF-funded workshop" },
-              {
-                label: "Focus",
-                text: "Quantum materials, microscopy, ultrafast probes",
-              },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="rounded-3xl border border-stone-200 bg-stone-50 p-6"
-              >
-                <p className="text-sm font-medium uppercase tracking-widest text-amber-700">
-                  {item.label}
-                </p>
-                <p className="mt-3 leading-7 text-stone-600">{item.text}</p>
-              </div>
-            ))}
-          </section>
+        <p
+          style={{
+            fontSize: "0.9375rem",
+            lineHeight: 1.8,
+            color: "var(--slate)",
+            maxWidth: "50rem",
+            margin: 0,
+          }}
+        >
+          ACoQuM brought together researchers working at the frontier of quantum
+          materials characterization, covering topics including 2D materials,
+          moiré systems, charge density waves, cryogenic electron microscopy,
+          ultrafast X-ray and THz probes, electron ptychography, and machine
+          learning-driven autonomous microscopy. The workshop included keynote
+          talks, technical sessions, discussion panels, and tours of ASU
+          microscopy and CXFEL facilities.
+        </p>
+      </section>
 
-          <section className="rounded-3xl border border-stone-200 bg-stone-50 p-6">
-            <h2 className="text-2xl font-semibold text-stone-950">
-              About the Workshop
-            </h2>
+      <section
+        className="card"
+        style={{ padding: "2rem 2.25rem", marginBottom: "1.5rem" }}
+      >
+        <div className="section-label">
+          <span className="label-gold">Program Schedule</span>
+        </div>
 
-            <p className="mt-5 max-w-4xl leading-8 text-stone-600">
-              ACoQuM brought together researchers working at the frontier of
-              quantum materials characterization, covering topics including 2D
-              materials, moiré systems, charge density waves, cryogenic electron
-              microscopy, ultrafast X-ray and THz probes, electron ptychography,
-              and machine learning-driven autonomous microscopy. The workshop
-              included keynote talks, technical sessions, discussion panels, and
-              tours of ASU microscopy and CXFEL facilities.
-            </p>
-          </section>
+        <div style={{ overflowX: "auto" }}>
+          <table
+            style={{
+              width: "100%",
+              borderCollapse: "collapse",
+              fontSize: "0.875rem",
+            }}
+          >
+            <thead>
+              <tr>
+                {["Time", "Day 1 — May 21", "Day 2 — May 22"].map((h) => (
+                  <th
+                    key={h}
+                    style={{
+                      textAlign: "left",
+                      padding: "0.75rem 1rem",
+                      borderBottom: "2px solid rgba(15,28,46,0.1)",
+                      color: "var(--navy)",
+                      fontWeight: 500,
+                      fontSize: "0.8125rem",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {h}
+                  </th>
+                ))}
+              </tr>
+            </thead>
 
-          <section className="rounded-3xl border border-stone-200 bg-stone-50 p-6">
-            <h2 className="text-2xl font-semibold text-stone-950">
-              Program Schedule
-            </h2>
-
-            <div className="mt-6 overflow-x-auto">
-              <table className="w-full border-collapse text-sm">
-                <thead>
-                  <tr>
-                    {["Time", "Day 1 — May 21", "Day 2 — May 22"].map(
-                      (header) => (
-                        <th
-                          key={header}
-                          className="whitespace-nowrap border-b-2 border-stone-200 px-4 py-3 text-left font-medium text-stone-950"
-                        >
-                          {header}
-                        </th>
-                      )
-                    )}
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {schedule.map((row, index) => (
-                    <tr
-                      key={row.time}
-                      className={index % 2 === 0 ? "bg-white" : "bg-stone-100"}
-                    >
-                      <td className="whitespace-nowrap px-4 py-3 font-medium text-amber-700">
-                        {row.time}
-                      </td>
-                      <td className="px-4 py-3 leading-6 text-stone-600">
-                        {row.day1}
-                      </td>
-                      <td className="px-4 py-3 leading-6 text-stone-600">
-                        {row.day2}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          <section className="rounded-3xl border border-stone-200 bg-stone-50 p-6">
-            <h2 className="text-2xl font-semibold text-stone-950">
-              Invited Speakers
-            </h2>
-
-            <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {speakers.map((speaker) => (
-                <div
-                  key={speaker.name}
-                  className="rounded-2xl border border-stone-200 bg-white p-5"
+            <tbody>
+              {schedule.map((row, i) => (
+                <tr
+                  key={row.time}
+                  style={{
+                    background:
+                      i % 2 === 0 ? "transparent" : "var(--surface-tinted)",
+                  }}
                 >
-                  <p className="font-semibold text-stone-950">
-                    {speaker.name}
-                  </p>
-                  <p className="mt-1 text-sm font-medium text-amber-700">
-                    {speaker.affiliation}
-                  </p>
-                  <p className="mt-3 text-sm leading-6 text-stone-600">
-                    {speaker.talk}
-                  </p>
-                </div>
+                  <td
+                    style={{
+                      padding: "0.75rem 1rem",
+                      color: "var(--gold)",
+                      fontWeight: 500,
+                      fontSize: "0.8rem",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {row.time}
+                  </td>
+
+                  <td
+                    style={{
+                      padding: "0.75rem 1rem",
+                      color: "var(--slate)",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    {row.day1}
+                  </td>
+
+                  <td
+                    style={{
+                      padding: "0.75rem 1rem",
+                      color: "var(--slate)",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    {row.day2}
+                  </td>
+                </tr>
               ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="card" style={{ padding: "2rem 2.25rem" }}>
+        <div className="section-label">
+          <span className="label-gold">Invited Speakers</span>
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: "0.75rem",
+          }}
+        >
+          {speakers.map((s) => (
+            <div
+              key={s.name}
+              style={{
+                background: "var(--surface-tinted)",
+                border: "1px solid rgba(15,28,46,0.07)",
+                borderRadius: "1rem",
+                padding: "1.25rem",
+              }}
+            >
+              <p
+                style={{
+                  fontWeight: 500,
+                  fontSize: "0.9rem",
+                  color: "var(--navy)",
+                  margin: "0 0 0.25rem",
+                }}
+              >
+                {s.name}
+              </p>
+
+              <p
+                style={{
+                  fontSize: "0.775rem",
+                  color: "var(--gold)",
+                  margin: "0 0 0.5rem",
+                  fontWeight: 500,
+                }}
+              >
+                {s.affiliation}
+              </p>
+
+              <p
+                style={{
+                  fontSize: "0.8125rem",
+                  color: "var(--slate-light)",
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}
+              >
+                {s.talk}
+              </p>
             </div>
-          </section>
+          ))}
         </div>
       </section>
     </main>
