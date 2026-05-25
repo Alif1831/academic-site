@@ -189,6 +189,11 @@ export default function Home() {
           <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
             {[
               {
+                title: "Attended ACoQuM Workshop at ASU",
+                text: "NSF-funded workshop on quantum materials, electron microscopy, and ultrafast probes at Arizona State University.",
+                year: "2026",
+              },
+              {
                 title: "Passed PhD Qualifying Exam",
                 text: "Passed in Engineering Math and chose Thermal Sciences as my major field.",
                 year: "2025",
@@ -210,8 +215,8 @@ export default function Home() {
               },
             ].map((item, i) => (
               <div key={item.title} style={{
-                paddingBottom: i < 3 ? "1.25rem" : 0,
-                borderBottom: i < 3 ? "1px solid rgba(15,28,46,0.07)" : "none",
+                paddingBottom: i < 4 ? "1.25rem" : 0,
+                borderBottom: i < 4 ? "1px solid rgba(15,28,46,0.07)" : "none",
               }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "0.5rem" }}>
                   <p style={{ fontWeight: 500, fontSize: "0.9375rem", margin: 0, color: "var(--navy)" }}>{item.title}</p>
