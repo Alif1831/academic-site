@@ -173,6 +173,7 @@ export default function ACoQuMWorkshopPage() {
         {[
           { label: "Dates", text: "May 21–22, 2026" },
           { label: "Location", text: "Arizona State University, Tempe, AZ" },
+          { label: "Support", text: "$750 travel grant" },
           { label: "Funding", text: "NSF-funded workshop" },
           {
             label: "Focus",

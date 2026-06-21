@@ -6,7 +6,17 @@ export default function WorkshopsPage() {
         "NSF-funded workshop on quantum materials, microscopy, ultrafast probes, and materials informatics.",
       date: "May 21–22, 2026",
       location: "Arizona State University, Tempe, AZ",
+      support: "$750 travel grant",
       href: "/workshops/acoqm",
+    },
+    {
+      title: "QC4MC — Quantum Computing for Materials and Chemistry",
+      subtitle:
+        "NSF CyberTraining summer school focused on quantum computing concepts, Qiskit, quantum chemistry, and applications in materials science.",
+      date: "June 16–19, 2026",
+      location: "Arizona State University, Tempe, AZ",
+      support: "$800 scholarship",
+      href: "/workshops/qc4mc",
     },
   ];
 
@@ -51,7 +61,7 @@ export default function WorkshopsPage() {
           >
             This page collects workshops, short courses, teaching resources, and
             academic training activities related to materials science, quantum
-            materials, microscopy, and engineering education.
+            materials, microscopy, computation, and engineering education.
           </p>
         </div>
       </section>
@@ -73,7 +83,7 @@ export default function WorkshopsPage() {
             >
               <div className="card card-hover" style={{ padding: "1.75rem" }}>
                 <p className="label-gold" style={{ marginBottom: "0.5rem" }}>
-                  {workshop.date} · {workshop.location}
+                  {workshop.date} · {workshop.location} · {workshop.support}
                 </p>
 
                 <h3

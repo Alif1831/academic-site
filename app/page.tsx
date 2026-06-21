@@ -154,28 +154,56 @@ export default function Home() {
       </section>
 
       {/* ── Currently / Updates ── */}
-      <section className="reveal" style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-        gap: "1rem",
-        marginBottom: "1.5rem",
-      }}>
+      <section
+        className="reveal"
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "1rem",
+          marginBottom: "1.5rem",
+        }}
+      >
         <div className="card" style={{ padding: "2rem" }}>
           <div className="section-label">
             <span className="label-gold">Currently</span>
           </div>
-          <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "0.875rem" }}>
+
+          <ul
+            style={{
+              margin: 0,
+              padding: 0,
+              listStyle: "none",
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.875rem",
+            }}
+          >
             {[
               "Working on MAX phase synthesis using Flash Joule Heating.",
               "Exploring MXene-based electrochemical materials.",
               "Teaching AME-MSE 331R: Fundamentals of Materials for Engineers.",
               "Interested in materials informatics and data-driven discovery.",
-            ].map(item => (
-              <li key={item} style={{
-                display: "flex", alignItems: "flex-start", gap: "0.75rem",
-                fontSize: "0.9375rem", lineHeight: 1.65, color: "var(--slate)",
-              }}>
-                <span style={{ color: "var(--gold)", flexShrink: 0, marginTop: "0.15em" }}>◆</span>
+            ].map((item) => (
+              <li
+                key={item}
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "0.75rem",
+                  fontSize: "0.9375rem",
+                  lineHeight: 1.65,
+                  color: "var(--slate)",
+                }}
+              >
+                <span
+                  style={{
+                    color: "var(--gold)",
+                    flexShrink: 0,
+                    marginTop: "0.15em",
+                  }}
+                >
+                  ◆
+                </span>
                 {item}
               </li>
             ))}
@@ -186,45 +214,107 @@ export default function Home() {
           <div className="section-label">
             <span className="label-gold">Recent Updates</span>
           </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-            {[
-              {
-                title: "Attended ACoQuM Workshop at ASU",
-                text: "NSF-funded workshop on quantum materials, electron microscopy, and ultrafast probes at Arizona State University.",
-                year: "2026",
-              },
-              {
-                title: "Passed PhD Qualifying Exam",
-                text: "Passed in Engineering Math and chose Thermal Sciences as my major field.",
-                year: "2025",
-              },
-              {
-                title: "Publication in Journal of Molecular Modeling",
-                text: "Multi-fidelity neural network prediction of tensile strength in high-entropy alloys.",
-                year: "2025",
-              },
-              {
-                title: "Teaching project added",
-                text: "Fe₃C phase diagram project for AME 331R is available on GitHub.",
-                year: "2025",
-              },
-              {
-                title: "Academic website launched",
-                text: "Research, CV, publications, and contact information are now organized in one place.",
-                year: "2025",
-              },
-            ].map((item, i) => (
-              <div key={item.title} style={{
-                paddingBottom: i < 4 ? "1.25rem" : 0,
-                borderBottom: i < 4 ? "1px solid rgba(15,28,46,0.07)" : "none",
-              }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "0.5rem" }}>
-                  <p style={{ fontWeight: 500, fontSize: "0.9375rem", margin: 0, color: "var(--navy)" }}>{item.title}</p>
-                  <span style={{ fontSize: "0.75rem", color: "var(--gold)", fontWeight: 500, flexShrink: 0 }}>{item.year}</span>
+
+          <div
+            style={{
+              maxHeight: "360px",
+              overflowY: "auto",
+              paddingRight: "0.75rem",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "1.25rem",
+              }}
+            >
+              {[
+                {
+                  title: "Attended ACoQuM Workshop at ASU",
+                  text: "NSF-funded workshop on quantum materials, electron microscopy, and ultrafast probes at Arizona State University. Received a $750 travel grant.",
+                  year: "2026",
+                },
+                {
+                  title: "Attended QC4MC Summer School",
+                  text: "NSF CyberTraining summer school on quantum computing for materials and chemistry. Received an $800 scholarship.",
+                  year: "2026",
+                },
+                {
+                  title: "Passed PhD Qualifying Exam",
+                  text: "Passed in Engineering Math and chose Thermal Sciences as my major field.",
+                  year: "2025",
+                },
+                {
+                  title: "Publication in Journal of Molecular Modeling",
+                  text: "Multi-fidelity neural network prediction of tensile strength in high-entropy alloys.",
+                  year: "2025",
+                },
+                {
+                  title: "Teaching Project Added",
+                  text: "Fe₃C phase diagram project for AME 331R is available on GitHub.",
+                  year: "2025",
+                },
+                {
+                  title: "Academic Website Launched",
+                  text: "Research, CV, publications, workshops, and contact information are now organized in one place.",
+                  year: "2025",
+                },
+              ].map((item, i, arr) => (
+                <div
+                  key={item.title}
+                  style={{
+                    paddingBottom: i < arr.length - 1 ? "1.25rem" : 0,
+                    borderBottom:
+                      i < arr.length - 1
+                        ? "1px solid rgba(15,28,46,0.07)"
+                        : "none",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "baseline",
+                      gap: "0.5rem",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontWeight: 500,
+                        fontSize: "0.9375rem",
+                        margin: 0,
+                        color: "var(--navy)",
+                      }}
+                    >
+                      {item.title}
+                    </p>
+
+                    <span
+                      style={{
+                        fontSize: "0.75rem",
+                        color: "var(--gold)",
+                        fontWeight: 500,
+                        flexShrink: 0,
+                      }}
+                    >
+                      {item.year}
+                    </span>
+                  </div>
+
+                  <p
+                    style={{
+                      margin: "0.35rem 0 0",
+                      fontSize: "0.875rem",
+                      lineHeight: 1.65,
+                      color: "var(--slate-light)",
+                    }}
+                  >
+                    {item.text}
+                  </p>
                 </div>
-                <p style={{ margin: "0.35rem 0 0", fontSize: "0.875rem", lineHeight: 1.65, color: "var(--slate-light)" }}>{item.text}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
